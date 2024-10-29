@@ -1,17 +1,21 @@
 <template>
-    <figure class="cardWrap">
-        <div class="imgWrap"><img src="#" alt="" /></div>
-        <figcaption class="textWrap">
-            <h3 class="twoline">'비침습 연속혈당측정기' 개발 기업 아폴론, 중기부 장관상 수상</h3>
-            <span class="twoline">2024.01.01 조선일보</span>
-        </figcaption>
-    </figure>
+    <a href="/detail">
+        <figure class="cardWrap">
+            <div class="imgWrap"><img src="#" alt="" /></div>
+            <figcaption class="textWrap">
+                <h3 class="twoline">'비침습 연속혈당측정기' 개발 기업 아폴론, 중기부 장관상 수상</h3>
+                <span class="twoline">2024.01.01 조선일보</span>
+            </figcaption>
+        </figure>
+    </a>
 </template>
+
 <script>
 export default {
     
 }
 </script>
+
 <style lang="scss">
     .cardWrap{
         min-width: 320px;        

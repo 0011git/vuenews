@@ -23,6 +23,7 @@ export default {
 <style lang="scss">
 .localGlobalTabWrap{
     ul{
+        border-bottom: 0.5px solid #cccccc;
         display: flex;
         justify-content: start;
         align-items: center;

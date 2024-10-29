@@ -1,11 +1,13 @@
 <template>
-    <figure class="strapWrap">
-        <figcaption class="textWrap">
-            <h3 class="twoline">'비침습 연속혈당측정기' 개발 기업 아폴론, 중기부 장관상 수상</h3>
-            <span class="twoline">2024.01.01 조선일보</span>
-        </figcaption>
-        <div class="imgWrap"><img src="#" alt="" /></div>
-    </figure>
+    <a href="/detail">
+        <figure class="strapWrap">
+            <figcaption class="textWrap">
+                <h3 class="twoline">'비침습 연속혈당측정기' 개발 기업 아폴론, 중기부 장관상 수상</h3>
+                <span class="twoline">2024.01.01 조선일보</span>
+            </figcaption>
+            <div class="imgWrap"><img src="#" alt="" /></div>
+        </figure>
+    </a>
 </template>
 <script>
 export default {
@@ -18,10 +20,11 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
         .textWrap{
             margin-right: 8px;
             h3{
-                margin: 0;
+                margin-bottom: 4px;
                 font-weight: 400;
             }
             span{

@@ -6,10 +6,9 @@
         </ul>
         <h3>World News</h3>
         <div class="notice">    
-            <p>이 사이트는 Vue.js를 이용해 학습용으로 제작되었습니다.</p>
-            <p>This site was created for educational purposes using Vue.js.</p>
+            <p>이 사이트는 Vue.js를 이용해 학습용으로 제작되었습니다. This site was created for educational purposes using Vue.js.</p>
         </div>
-        <p>Copyright ⓒ World News All rights reserved.</p>
+        <p class="copyright">Copyright ⓒ World News All rights reserved.</p>
     </footer>
 </template>
 
@@ -21,13 +20,13 @@ export default {
 <style lang="scss">
     footer{
         padding: 32px 32px 8px;
-        color: #cccccc;
         background-color: #eeeeee;
         ul{
             display: flex;
             justify-content: center;
             align-items: center;
             li{
+                color: #cccccc;
                 font-size: 14px;
                 &:not(:last-of-type)::after{
                     content: '|';
@@ -38,14 +37,19 @@ export default {
         }
         h3{            
             margin: 8px 0;
+            color: #cccccc;
             text-align: center;
         }
         p{
-            font-size: 14px;
+            color: #cccccc;
+            font-size: 12px;
             text-align: center;
         }
         .notice{
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+        }
+        .copyright{
+            margin: 8px 0;
         }
     }
 </style>

@@ -1,11 +1,13 @@
 <template>
   <div class="home">
+    <NavMenu />
     <div class="localGlobalTabWrap">
       <LocalGlobalTab />
     </div>
 
     <section>
       <h2>오늘의 뉴스</h2>
+      <div class="cardNewsWrap"><CardNews /></div>
       <div class="cardNewsWrap"><CardNews /></div>
       <div class="cardNewsWrap"><CardNews /></div>
       <div class="cardNewsWrap"><CardNews /></div>
@@ -49,16 +51,15 @@ export default {
 
 <style lang="scss">
   .home{
-    .localGlobalTabWrap{
-      margin-bottom: 32px;
-    }
     section{
-
+      &:first-of-type{
+        margin-top: 32px;
+      }
       &:not(:last-of-type){
         margin-bottom: 60px;
       }
       h2{
-        margin-bottom: 14px;
+        margin-bottom: 24px;
         font-size: 24px;
         text-align: start;  
       }
@@ -69,7 +70,7 @@ export default {
       }
       .sectionBtnsWrap{
         width: 100%;
-        margin: 10px 0 28px;
+        margin-bottom: 24px;
       }
       .strapNewsWrap{
         &:not(:last-of-type){

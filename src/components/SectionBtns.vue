@@ -1,19 +1,27 @@
 <template>
     <div class="sectionBtnsWrap">
         <ul>        
-            <li><button class="clicked" type="button">정치</button></li>
-            <li><button type="button">경제</button></li>
-            <li><button type="button">사회</button></li>
-            <li><button type="button">문화</button></li>
-            <li><button type="button">세계</button></li>
-            <li><button type="button">기술</button></li>
-            <li><button type="button">연예</button></li>
-            <li><button type="button">오피니언</button></li>
+            <li :class="{clicked: isClicked}">정치</li>
+            <li>경제</li>
+            <li>사회</li>
+            <li>문화</li>
+            <li>세계</li>
+            <li>기술</li>
+            <li>연예</li>
+            <li>오피니언</li>
         </ul>
     </div>
 </template>
 <script>
 export default {
+    data(){
+        return {isClicked:[false, false, false, false, false, false, false, false]}
+    },
+    methods: {
+        setIsClicked(){
+
+        }
+    }
     
 }
 </script>
@@ -26,19 +34,17 @@ export default {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             border: 0.5px solid #cccccc;
             li{
+                width: 100%;
+                padding: 8px 16px;
+                text-align: center;
                 border: 0.5px solid #cccccc;
-                button{
-                    width: 100%;
-                    padding: 8px 16px;
-                    text-align: center;
-                    font-size: 14px;
-                    white-space: nowrap;
-                    cursor: pointer;
-                    background-color: #ffffff;
-                    &.clicked{
-                        font-weight: 700;
-                    }
-                }
+                font-size: 14px;
+                cursor: pointer;
+                background-color: #ffffff;
+                white-space: nowrap;
+                &.clicked{
+                    font-weight: 700;
+                }                
             }
         }
     }
