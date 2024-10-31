@@ -38,13 +38,14 @@ export default {
     .detailWrap{
         margin-top: 32px;
         .titleWrap{
-            margin: 32px 0 16px;
+            margin: 48px 0 40px;
             .section{
-                margin-bottom: 8px;
+                margin-bottom: 16px;
+                display: block;
                 font-size: 14px;
             }
             .title{
-                margin-bottom: 12px;
+                margin-bottom: 20px;
                 font-size: 24px;
                 font-weight: 700;
             }
@@ -59,7 +60,7 @@ export default {
         .imgWrap{
             min-width: 320px;
             min-height: 210px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             border-radius: 20px;
             overflow: hidden;
             img{
@@ -67,7 +68,7 @@ export default {
             }
         }
         .textWrap{
-            margin-bottom: 32px;
+            margin-bottom: 60px;
             p{
                 font-weight: 400;
                 margin: 0;

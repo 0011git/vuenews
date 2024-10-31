@@ -58,6 +58,9 @@ export default {
       &:not(:last-of-type){
         margin-bottom: 60px;
       }
+      &:last-of-type{
+        margin-bottom: 100px;
+      }
       h2{
         margin-bottom: 24px;
         font-size: 24px;
@@ -74,7 +77,7 @@ export default {
       }
       .strapNewsWrap{
         &:not(:last-of-type){
-          margin-bottom: 16px;
+          margin-bottom: 40px;
         }
       }
     }

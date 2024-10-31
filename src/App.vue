@@ -98,6 +98,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   
+  
   color: #1F1F1F;
   font-size: 16px;
 }
@@ -108,14 +109,12 @@ export default {
 }
 
 main{
-  position: relative;
-  
+  position: relative; 
 
 }
 
 .contentsCommon{
-  padding-top: 60px;
-  margin: 0px 20px 100px;
+  padding: 60px 20px 0;
 }
 // .logo32{
 //   width: 208px;

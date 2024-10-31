@@ -15,13 +15,19 @@
   
         <ul class="radioWrap">
           <li class="inputWrap">
-            <input class="radio" type="radio" id="local" name="world" />
-            <label for="local">국내</label>
+            <label for="local worldLabel">
+              <span :class="['radioCustom', {'clicked':isChecked('local')}]"></span>
+              <input class="radio" type="radio" id="local" name="world" />
+              국내
+            </label>
           </li>
           
           <li class="inputWrap">
-            <input class="radio" type="radio" id="global" name="world" />
-            <label for="global">해외</label>
+            <label for="global worldLabel">
+              <span :class="['radioCustom', {'clicked':isChecked('global')}]"></span>
+              <input class="radio" type="radio" id="global" name="world" />
+              해외
+            </label>
           </li>
         </ul>
   
@@ -30,7 +36,15 @@
 </template>
 <script>
 export default {
-    props: ["isSearchBoxVisible", "lockScroll"]
+    props: ["isSearchBoxVisible", "lockScroll"],
+    data() {
+      return { radio:'local' }
+    },
+    methods : {
+      isChecked(world){
+        return this.radio === world
+      }
+    }
     
 }
 </script>
@@ -73,59 +87,66 @@ export default {
         }
         .inputWrap{
             width: 100%;
-            input{
-                width: 100%;
-                height: 100%;
-                min-width: 200px;
-                min-height: 32px;
-                padding: 12px 40px 12px 16px;
-                font-size: 16px;
-                background-color: #eeeeee;
-                color: #cccccc;
-                border: none;
-                border-radius: 8px;
-                &:focus{
-                    background-color: #ffffff;
-                    border: 1px solid #1f1f1f;
-                    color: #1f1f1f;
-                }
+            .worldLabel{
+              position: relative;
+              .radioCustom{}
+              input{
+                  width: 100%;
+                  height: 100%;
+                  min-width: 200px;
+                  min-height: 32px;
+                  padding: 12px 40px 12px 16px;
+                  font-size: 16px;
+                  background-color: #eeeeee;
+                  color: #cccccc;
+                  border: none;
+                  border-radius: 8px;
+                  &:focus{
+                      background-color: #ffffff;
+                      border: 1px solid #1f1f1f;
+                      color: #1f1f1f;
+                  }
+              }
             }
             label{
-                position: relative;
-                &::after{
-                    width: 32px;
-                    height: 32px;
-                    margin-right: 4px;
-                    content: '';
-                    cursor: pointer;
-                    position: absolute;
-                    top: 50%;
-                    right: 16px;
-                    transform: translate(50%, -50%);
-                    background: url('../assets/search.svg') center no-repeat;
-                    background-size: contain;
-                }
+              position: relative;
+              &::after{
+                  width: 32px;
+                  height: 32px;
+                  margin-right: 4px;
+                  content: '';
+                  cursor: pointer;
+                  position: absolute;
+                  top: 50%;
+                  right: 16px;
+                  transform: translate(50%, -50%);
+                  background: url('../assets/search.svg') center no-repeat;
+                  background-size: contain;
+              }
             }
         }
       }
       .radioWrap{
+        display: flex;
         .inputWrap{
-          .radio{
-            display: none;
-            &::before{
-              width: 16px;
-              height: 16px;
-              display: block;
-              background: url('../assets/radio.svg') center no-repeat;
-            }
-            &:checked{
+          &:not(:last-of-type){
+            margin-right: 16px;
+          }
+          .radioCustom{
               &::before{
-                &.clicked{
-                  background: url('../assets/radio_clicked.svg') center no-repeat;
-                }
+                width: 16px;
+                height: 16px;
+                content: '';
+                display: block;
+                background: url('../assets/radio.svg') center no-repeat;
+              }
+              &.clicked::before{
+                background: url('../assets/radio_clicked.svg') center no-repeat;
               }
             }
-          }
+            .radio{
+              display: none;
+            }
           label{
             &:not(:last-of-type){
               margin-right: 16px;
