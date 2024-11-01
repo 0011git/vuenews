@@ -5,48 +5,31 @@
 </template>
 
 <script>
-const serverUrl = 'http://localhost:4000/news'
-const world = 'local';  // local or global
-
-
-const today = new Date();
-const aWeekAgo = today - 7;
-console.log(aWeekAgo);
-const query = {
-    world: world,
-    date_from: today,
-    date_to: today,
-    keyword: formattedKeyword,
-}
-
-/** 키워드 형식 바꾸는 함수 */
-function keywordFormat(raw) {
-    return raw.split(' ').join(' OR ');
-}
-const formattedKeyword = keywordFormat('인공 지능 특이점')
-
+import axios from 'axios';
 
 
 export default {
     data(){
         return{ }
     },
-    created() {
-        this.mainApi();
-        this.sectionApi();
-        this.searchApi();
+    // created() {
+    //     this.mainApi();
+    //     this.sectionApi();
+    //     this.searchApi();
 
-    },
+    // },
     methods: {
-        async mainApi(){
-            const response = await axios.get(serverUrl, {params: query})
-            console.log(response.data);
+        async mainApi(world){
+            const response = await axios.get(`http://localhost:4000/news?world=${world}&page=main`)
+            return response.data;
         },
-        async sectionApi(){
-
+        async sectionApi(world, section){
+            const response = await axios.get(`http://localhost:4000/news?world=${world}&page=section&section=${section}`)
+            return response.data;
         },
-        async searchApi(){
-
+        async searchApi(world, keyword){
+            const response = await axios.get(`http://localhost:4000/news?world=${world}&page=search&keyword=${keyword}`)
+            return response.data;
         }
     }
 }

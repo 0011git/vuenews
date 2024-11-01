@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    
+   
     <NavMenu />
     <div class="localGlobalTabWrap">
       <LocalGlobalTab />
@@ -12,7 +14,7 @@
       <div class="cardNewsWrap"><CardNews /></div>
       <div class="cardNewsWrap"><CardNews /></div>
     </section>
-    
+
     <section>
       <h2>섹션별</h2>
       <div class="sectionBtnsWrap">
@@ -36,16 +38,34 @@ import CardNews from '@/components/CardNews.vue';
 import StrapNews from '@/components/StrapNews.vue';
 import SectionBtns from '@/components/SectionBtns.vue';
 import LocalGlobalTab from '@/components/LocalGlobalTab.vue'
+import { mapState } from 'vuex';
+
+
 
 // @ is an alias to /src
 export default {
   name: 'HomeView',
+  data(){
+    return {  }
+  },
+  computed:{
+    ...mapState("mainData",['items'])
+  },
   components: {
     CardNews,
     StrapNews,
     SectionBtns,
     LocalGlobalTab
+  },
+  methods: {    
+    
+  },
+  created(){
+    
+  },
+  mounted(){
   }
+
 }
 </script>
 
