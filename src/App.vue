@@ -116,6 +116,23 @@ main{
 .contentsCommon{
   padding: 60px 20px 0;
 }
+.noImg{
+  background-color: #eeeeee;
+  position: relative;
+  &::after{
+      width: 92px;
+      height: 16px;
+      content: '';
+      background: url('./assets/logo_small_gray.svg') center no-repeat;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+  }
+  img{
+      display: none;
+  }
+}
 // .logo32{
 //   width: 208px;
 //   height: 37px;

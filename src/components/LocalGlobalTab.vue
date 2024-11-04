@@ -9,13 +9,17 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
     data(){
         return { isActive: [true, false],  }
     },
     methods:{
+        ...mapActions('localOrGlobalModule', ['localGlobal']), // Vuex action을 불러오기
         onToggle(index){
             this.isActive = this.isActive.map((li, idx) => idx === index);
+            this.localGlobal(index === 0);
         }
     }
 }

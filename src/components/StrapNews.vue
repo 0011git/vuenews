@@ -1,28 +1,40 @@
 <template>
-    <a href="/detail">
-        <figure class="strapWrap">
-            <figcaption class="textWrap">
-                <h3 class="twoline">'비침습 연속혈당측정기' 개발 기업 아폴론, 중기부 장관상 수상</h3>
-                <span class="twoline">2024.01.01 조선일보</span>
-            </figcaption>
-            <div class="imgWrap"><img src="#" alt="" /></div>
-        </figure>
-    </a>
+    <figure class="strapWrap" @click="goToDetail">
+        <figcaption class="textWrap">
+            <h3 class="twoline">{{ news.title }}</h3>
+            <span class="twoline">{{ news.published_at.replace('T', ' ').slice(0, -3) }} {{ news.publisher }}</span>
+        </figcaption>
+        <div :class="['imgWrap', {noImg: !news.thumbnail_url}]">
+            <img :src="news.thumbnail_url" :alt="news.title" />
+        </div>
+    </figure>
 </template>
+
 <script>
+import { goToDetailMixin } from '@/mixins/goToDetail';
+
 export default {
+    props : {
+        news : {
+            type: Object,
+            required: true
+        }
+    },
+    mixins: [goToDetailMixin]
     
 }
 </script>
 <style lang="scss">
-     .strapWrap{
+    .strapWrap{
         min-width: 320px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        // gap: 16px;
         cursor: pointer;
         .textWrap{
             margin-right: 8px;
+            flex: 1;
             h3{
                 margin-bottom: 4px;
                 font-weight: 400;
@@ -33,14 +45,13 @@ export default {
             }
         }
         .imgWrap{
-            min-width: 80px;
-            min-height: 80px;
+            width: 80px;
+            height: 80px;
             border-radius: 8px;
             overflow: hidden;
             img{
-                background-color: #42b983;
+                object-fit: cover;
             }
         }
-
     }
 </style>
