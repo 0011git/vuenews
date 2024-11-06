@@ -12,34 +12,28 @@ vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
 
 
 
-## 📑 INFO
-1. **주제**
-    - 국내 및 해외 뉴스 모바일 전용 사이트
+## 📑 요약
+### 1. 주제
+- 국내 및 해외 뉴스 모바일 전용 사이트
 
-2. **목표**
-    - 실시간 뉴스 정보 제공
+### 2. 목표
+- 실시간 뉴스 정보 제공
 
-3. **핵심 기능**
-    - 딥서치 뉴스 API[(1.0.0)](https://news.deepsearch.com/api/) 활용
-    - Express API 서버 구축
-    - Vercel 배포  
-      
-4. **기간 및 인원**
-    - 2024.10.25 ~ 2024.11.00(00일), 1인
+### 3. 핵심 기능
+- 딥서치 뉴스 API[(1.0.0)](https://news.deepsearch.com/api/) 활용
+- Express API 서버 구축
+- Vercel 배포
+
+### 4. 주요 기술 스택
+- Vue.js, Express, Vercel
+
+### 5. 기간 및 인원
+- 2024.10.25 ~ 2024.11.00(00일), 1인
 
 
 
-## 🛠️ 개발 환경  
-| 기술            | 기술명            | Badge                                                           |
-|:-----------------:|:-----------------:|:-------------------------------------------------------------:|
-| **프레임워크**    | Vue.js            | ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white) |
-| **상태 관리**     | Vuex              | ![Vuex](https://img.shields.io/badge/Vuex-4FC08D?style=flat-square&logo=Vuex&logoColor=white) |
-| **서버**          | Express           | ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) |
-| **스타일링**      | SASS              | ![SASS](https://img.shields.io/badge/SASS-CC6699?style=flat-square&logo=sass&logoColor=white) |
-| **API 테스트**    | Postman           | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white) |
-| **HTTP 요청**     | Axios             | ![Axios](https://img.shields.io/badge/Axios-5A29E6?style=flat-square&logo=axios&logoColor=white) |
-| **버전 관리**     | GitHub            | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white) |
-| **배포**          | Vercel            | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white) |
+## 💡 주요 기능
+
 
 
 
@@ -85,55 +79,64 @@ vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
 
 
 
-## 📱 스크린샷
-
-
+## 🛠️ 개발 환경  
+| 기술              | 기술명            | Badge                                                           |
+|:-----------------:|:-----------------:|:-------------------------------------------------------------:|
+| **프레임워크**    | Vue.js            | ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white) |
+| **상태 관리**     | Vuex              | ![Vuex](https://img.shields.io/badge/Vuex-4FC08D?style=flat-square&logo=Vuex&logoColor=white) |
+| **서버**          | Express           | ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) |
+| **스타일링**      | SASS              | ![SASS](https://img.shields.io/badge/SASS-CC6699?style=flat-square&logo=sass&logoColor=white) |
+| **API 테스트**    | Postman           | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white) |
+| **HTTP 요청**     | Axios             | ![Axios](https://img.shields.io/badge/Axios-5A29E6?style=flat-square&logo=axios&logoColor=white) |
+| **버전 관리**     | GitHub            | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white) |
+| **배포**          | Vercel            | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white) |
 
 
 
 ## 🙋 개발 상세
-1. **API 엔드포인트를 고려한 사이트 구조 설계**
-    - 탑다운 방식
-    - 리소스 경로에서 필수 선행하는 국내/해외 경로를 최상위에 배치
-        - 국내(...deepsearch.com/v1/**articles**)와 해외(.../v1/**global-articles**) 선택을 최상위 배치하여 API URL구조와 일치시킴
-    - 이후 선택 사항인 섹션 배치
-        - 정치(.../v1/articles/**politics**), 경제(.../v1/articles/**economy**) 등 8개의 섹션은 최상위에서 선택한 URL에 이어 붙일 수 있도록 함
-  
-    - 그 외 쿼리는 큰 영향력이 없어 구조 설계시 제외
+### 1. API 엔드포인트를 고려한 사이트 구조 설계
+- 탑다운 방식으로 설계
+- 리소스 경로에서 필수 선행하는 국내/해외 경로를 최상위에 배치
+    - 국내(...deepsearch.com/v1/**articles**)와 해외(.../v1/**global-articles**) 선택을 최상위 배치하여 API URL구조와 일치시킴
+- 이후 선택 사항인 섹션 배치
+    - 정치(.../v1/articles/**politics**), 경제(.../v1/articles/**economy**) 등 8개의 섹션은 최상위에서 선택한 URL에 이어 붙일 수 있도록 함
+
+- 그 외 쿼리는 큰 영향력이 없어 구조 설계시 제외
   
 ![image](https://github.com/user-attachments/assets/c042591a-69af-4da1-b734-5454d4d732f2)
 
 
-2. **API 호출 함수 파일 분리**
-    - 유지보수 및 향후 확장성을 고려하여 별도의 파일로 분리
-    - 페이지별로 구분해 현재 메인, 섹션, 검색결과 총 3개의 함수로 분리
+### 2. API 호출 함수 파일 분리
+- 유지보수 및 향후 확장성을 고려하여 별도의 파일로 분리
+- 페이지별로 구분해 현재 메인, 섹션, 검색결과 총 3개의 함수로 분리
   
-3. **컴포넌트화**
-    - 기본: 헤더, 푸터, 네비게이션 메뉴바, 탑버튼, 검색 인풋박스 등 기본 공통 요소들을 컴포넌트화
-    - 컨텐츠별: 뉴스 컨텐츠 표기 방식에 따라 카드형, 스트랩형으로 구분해 컴포넌트화
-    - 이 외 국내/해외 탭, 섹션 버튼 등 다수의 페이지에서 중복 사용하는 요소들을 컴포넌트화
+### 3. 컴포넌트화
+- 기본: 헤더, 푸터, 네비게이션 메뉴바, 탑버튼, 검색 인풋박스 등 기본 공통 요소들을 컴포넌트화
+- 컨텐츠별: 뉴스 컨텐츠 표기 방식에 따라 카드형, 스트랩형으로 구분해 컴포넌트화
+- 이 외 국내/해외 탭, 섹션 버튼 등 다수의 페이지에서 중복 사용하는 요소들을 컴포넌트화
       
-4. **메인 페이지 store 모듈화**
-    - 현재 메인은 api 호출 횟수가 총 18회이며 데이터의 갯수가 많고 향후 서비스 확장시 추가 가능성이 있음. 또한 유저가 빈번히 되돌아가는 페이지임.
-      
-      ⇒ 따라서 메인은 접속시 최초 1회로 **api 호출 횟수를 최소화하기 위해** 호출과 데이터 저장까지 store에서 진행함
-    - 해당 store는 전역 상태 관리보다는 데이터 저장 목적이고, 메인 페이지에서만 사용하기 때문에 모듈화함
+### 4. store 모듈화
+#### (1) 메인 페이지
+- 현재 메인은 api 호출 횟수가 총 18회이며 데이터의 갯수가 많고 향후 서비스 확장시 추가 가능성이 있음. 또한 유저가 빈번히 되돌아가는 페이지임.
+  
+   ⇒ 따라서 메인은 접속시 최초 1회로 **api 호출 횟수를 최소화하기 위해** 호출과 데이터 저장까지 store에서 진행함
+- 해당 store는 전역 상태 관리보다는 데이터 저장 목적이고, 메인 페이지에서만 사용하기 때문에 모듈화함
 
-5. **디테일 페이지 store 모듈화**
-    - 카드 뉴스 혹은 스트랩 뉴스와 동일한 데이터 중 1개의 데이터만 디테일 페이지에서 사용하기 때문에 api요청을 새로 하지 않고 store에 저장 후 사용하도록 함
-    - 해당 store 또한 데이터 저장 목적이며 디테일 페이지에서만 사용하기 때문에 모듈화함
-    - 해당 페이지를 나갈 때 데이터를 즉시 삭제하도록 함
+#### (2) 디테일 페이지
+- 카드 뉴스 혹은 스트랩 뉴스와 동일한 데이터 중 1개의 데이터만 디테일 페이지에서 사용하기 때문에 api요청을 새로 하지 않고 store에 저장 후 사용하도록 함
+- 해당 store 또한 데이터 저장 목적이며 디테일 페이지에서만 사용하기 때문에 모듈화함
+- 해당 페이지를 나갈 때 데이터를 즉시 삭제하도록 함
 
-6. **검색 페이지 store 모듈화**
-    - "검색결과 페이지 → 디테일 페이지 이동 → 뒤로 가기(검색결과 페이지) → 다른 컨텐츠의 디테일 페이지로 이동"하는 반복적인 플로우를 고려하여, 뒤로 가기를 통해 검색결과 페이지로 재이동 시 매번 api재호출이 발생하는 것을 방지하기 위해 데이터를 store에 저장 후 사용하도록 함
-    - 해당 store 또한 데이터 저장 목적이며 디테일 페이지에서만 사용하기 때문에 모듈화함
-    - 검색 서비스 이용 시 검색어가 변경된다는 가정 하에, 메인 페이지와 달리 동일한 데이터를 반복적으로 사용할 가능성이 낮고 반복된 스크롤 다운으로 데이터 누적 시 데이터의 양이 방대하므로, 검색 페이지에서 **디테일 페이지 외 다른 페이지로 라우팅 시 데이터를 즉시 삭제**하도록 함
+#### (3) 검색 페이지
+- "검색결과 페이지 → 디테일 페이지 이동 → 뒤로 가기(검색결과 페이지) → 다른 컨텐츠의 디테일 페이지로 이동"하는 반복적인 플로우를 고려하여, 뒤로 가기를 통해 검색결과 페이지로 재이동 시 매번 api재호출이 발생하는 것을 방지하기 위해 데이터를 store에 저장 후 사용하도록 함
+- 해당 store 또한 데이터 저장 목적이며 디테일 페이지에서만 사용하기 때문에 모듈화함
+- 검색 서비스 이용 시 검색어가 변경된다는 가정 하에, 메인 페이지와 달리 동일한 데이터를 반복적으로 사용할 가능성이 낮고 반복된 스크롤 다운으로 데이터 누적 시 데이터의 양이 방대하므로, 검색 페이지에서 **디테일 페이지 외 다른 페이지로 라우팅 시 데이터를 즉시 삭제**하도록 함
 
-7. **Express를 사용한 API 서버 구축**
-    - API 요청을 위해 express로 서버 구축 (news.js)
-    - 클라이언트에서 서버 호출 시 [ 국내/해외, 페이지, 섹션, 검색키워드 등 ] 필수 정보를 쿼리로 넘김
-    - 서버는 API요청 형식에 맞게 쿼리값을 변경하고 요청 주소를 설정함
-    - '오늘의 뉴스' 등 컨텐츠마다 변경되는 날짜 계산(오늘, 30일전)은 서버에서 진행함
+### 5. Express 서버 구축
+- API 요청을 위해 express로 서버 구축 (news.js)
+- 클라이언트에서 서버 호출 시 [ 국내/해외, 페이지, 섹션, 검색키워드 등 ] 필수 정보를 쿼리로 넘김
+- 서버는 API요청 형식에 맞게 쿼리값을 변경하고 요청 주소를 설정함
+- '오늘의 뉴스' 등 컨텐츠마다 변경되는 날짜 계산(오늘, 30일전)은 서버에서 진행함
 
 
    
@@ -143,4 +146,7 @@ vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
 
 
   
+
+## 📱 스크린샷
+
 
