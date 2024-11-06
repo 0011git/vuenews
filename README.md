@@ -1,6 +1,7 @@
 [![Group 5 (1)](https://github.com/user-attachments/assets/140136ed-af67-43e7-b230-2da64d915b48)](로고에배포url링크걸기)
 
-<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white"/>  <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"/>  <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white) ![Vuex](https://img.shields.io/badge/Vuex-4FC08D?style=flat-square&logo=Vuex&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-CC6699?style=flat-square&logo=sass&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white) ![Axios](https://img.shields.io/badge/Axios-5A29E6?style=flat-square&logo=axios&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white)
+
 ## 📰 개요
 vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
 
@@ -19,7 +20,7 @@ vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
     - 실시간 뉴스 정보 제공
 
 3. **핵심 기능**
-    - 딥서치 뉴스 API 활용
+    - 딥서치 뉴스 API[(1.0.0)](https://news.deepsearch.com/api/) 활용
     - Express API 서버 구축
     - Vercel 배포  
       
@@ -28,15 +29,17 @@ vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
 
 
 
-## 🛠️ 기술 스택  
-| 역할         | 기술                       |
-|--------------|----------------------------|
-| 프론트엔드   | Vue.js                     |
-| 상태 관리    | Vuex                       |
-| 라우팅       | Vue Router                 |
-| 서버         | Express                    |
-| 배포         | Vercel                     |
-| API          | 딥서치 뉴스 API [(1.0.0)](https://news.deepsearch.com/api/) |
+## 🛠️ 개발 환경  
+| 기술            | 기술명            | Badge                                                           |
+|:-----------------:|:-----------------:|:-------------------------------------------------------------:|
+| **프레임워크**    | Vue.js            | ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white) |
+| **상태 관리**     | Vuex              | ![Vuex](https://img.shields.io/badge/Vuex-4FC08D?style=flat-square&logo=Vuex&logoColor=white) |
+| **서버**          | Express           | ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) |
+| **스타일링**      | SASS              | ![SASS](https://img.shields.io/badge/SASS-CC6699?style=flat-square&logo=sass&logoColor=white) |
+| **API 테스트**    | Postman           | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white) |
+| **HTTP 요청**     | Axios             | ![Axios](https://img.shields.io/badge/Axios-5A29E6?style=flat-square&logo=axios&logoColor=white) |
+| **버전 관리**     | GitHub            | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white) |
+| **배포**          | Vercel            | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white) |
 
 
 
