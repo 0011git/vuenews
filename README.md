@@ -1,5 +1,6 @@
-![Group 5 (1)](https://github.com/user-attachments/assets/140136ed-af67-43e7-b230-2da64d915b48)
+[![Group 5 (1)](https://github.com/user-attachments/assets/140136ed-af67-43e7-b230-2da64d915b48)](로고에배포url링크걸기)
 
+<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white"/>  <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"/>  <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
 ## 📰 개요
 vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
 
@@ -13,13 +14,16 @@ vue.js를 이용한 모바일 전용 뉴스 사이트 World News 입니다.
 ## 📑 INFO
 1. **주제**
     - 국내 및 해외 뉴스 모바일 전용 사이트
-  
-2. **핵심 기능**
+
+2. **목표**
+    - 실시간 뉴스 정보 제공
+
+3. **핵심 기능**
     - 딥서치 뉴스 API 활용
     - Express API 서버 구축
     - Vercel 배포  
       
-3. **기간 및 인원**
+4. **기간 및 인원**
     - 2024.10.25 ~ 2024.11.00(00일), 1인
 
 
