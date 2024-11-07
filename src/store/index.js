@@ -42,7 +42,7 @@ const mainDataModule = {
   },
   actions: {  //mutation실행시키기, 비동기처리가 필요한 로직 수행, dispatch('함수명', '전달인자', {root:true})로 실행, 함수형태로 작성??
     async fetchMainData({commit}){
-      const mainData = await mainApi(this.isLocal);
+      const mainData = await mainApi(this.world);
       commit('setMainItems', mainData)
     }
   }
