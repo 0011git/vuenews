@@ -109,8 +109,8 @@ export default {
 }
 
 main{
-  position: relative; 
-
+  max-width: 768px;
+  position: relative;
 }
 
 .contentsCommon{

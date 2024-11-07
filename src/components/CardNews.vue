@@ -27,8 +27,8 @@ export default {
 
 <style lang="scss">
     .cardWrap{
-        min-width: 320px;      
-
+        min-width: 320px;
+        cursor: pointer;
         .imgWrap{
             border-radius: 20px;
             overflow: hidden;
@@ -39,15 +39,15 @@ export default {
         .textWrap{
             margin: 8px 20px 0;
             h3{
+                font-size: 20px;
                 font-weight: 400;
                 margin: 0;
             }
             span{
                 margin-top: 4px;
-                font-size: 12px;
+                font-size: 14px;
                 color: #cccccc;
             }
         }
-
     }
 </style>

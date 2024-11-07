@@ -23,7 +23,9 @@
                 <a href="/section"><li>연예</li></a>
                 <a href="/section"><li>오피니언</li></a>
             </ul>
-            <span class="deco"></span>
+            <a href="/">
+                <span class="deco"></span>
+            </a>
         </div>
     </nav>
 </template>

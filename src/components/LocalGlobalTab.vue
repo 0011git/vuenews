@@ -9,21 +9,32 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
     data(){
         return { isActive: [true, false],  }
     },
+    computed: {
+        ...mapState("localOrGlobalModule", ['world']),
+    },
     methods:{
-        ...mapActions('localOrGlobalModule', ['localGlobal']), // Vuex action을 불러오기
+        ...mapActions('localOrGlobalModule', ['isLocal']), // Vuex action을 불러오기
         onToggle(index){
             this.isActive = this.isActive.map((li, idx) => idx === index);
-            this.localGlobal(index === 0);
+            if(index === 0) {
+                this.isLocal(true);
+                console.log(this.world);
+            }else {
+                this.isLocal(false);
+                console.log(this.world);    //클릭 시 전역값 변경되는 것까지 확인
+            }
         }
     }
 }
 </script>
+
+
 <style lang="scss">
 .localGlobalTabWrap{
     ul{

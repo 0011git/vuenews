@@ -43,7 +43,7 @@ export default {
     return {  }
   },
   computed:{
-    ...mapState("mainData", ['mainItems']),
+    ...mapState("mainDataModule", ['mainItems']),
     localOrGlobal(){
       return this.local ? this.mainItems.local : this.mainItems.global;
     }
@@ -55,9 +55,9 @@ export default {
     LocalGlobalTab
   },
   methods: {    
-    ...mapActions('mainData', ['fetchMainData']),
+    ...mapActions('mainDataModule', ['fetchMainData']),
     ...mapActions('DetailDataModule', ['saveDetailData']),
-    ...mapActions('localOrGlobal', ['local'] ),
+    ...mapActions('localOrGlobalModule', ['local'] ),
 
     mixins: [goToDetailMixin]
     

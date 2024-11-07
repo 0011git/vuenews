@@ -38,7 +38,7 @@ export default {
                 padding: 8px 16px;
                 text-align: center;
                 border: 0.5px solid #cccccc;
-                font-size: 14px;
+                font-size: 16px;
                 cursor: pointer;
                 background-color: #ffffff;
                 white-space: nowrap;
