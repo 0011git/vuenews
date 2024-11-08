@@ -146,6 +146,22 @@ main{
   cursor: pointer;
 }
 
+//두 줄 이상 ...줄이기
+.twoline{
+    display: -webkit-box; /* Flexbox를 사용할 때 */            
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 줄 수 설정 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 생략 기호(...) 표시 */
+}
+//세 줄 이상 ...줄이기
+.fourline{
+    display: -webkit-box; /* Flexbox를 사용할 때 */            
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* 줄 수 설정 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 생략 기호(...) 표시 */
+}
 
 
 body, h1, h2, h3, h4, h5, p, ul, li, div, a, button, input, span, figure, figcaption{
@@ -160,14 +176,7 @@ body, h1, h2, h3, h4, h5, p, ul, li, div, a, button, input, span, figure, figcap
   background-color: transparent;
 }
 
-//두 줄 이상 ...줄이기
-.twoline{
-    display: -webkit-box; /* Flexbox를 사용할 때 */            
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* 줄 수 설정 */
-    overflow: hidden;
-    text-overflow: ellipsis; /* 생략 기호(...) 표시 */
-}
+
 
 img {
     width: 100%;

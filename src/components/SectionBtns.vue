@@ -1,32 +1,37 @@
 <template>
     <div class="sectionBtnsWrap">
         <ul>        
-            <li :class="{clicked: isClicked}">정치</li>
-            <li>경제</li>
-            <li>사회</li>
-            <li>문화</li>
-            <li>세계</li>
-            <li>기술</li>
-            <li>연예</li>
-            <li>오피니언</li>
+            <li @click="setSectionIdx(0)" :class="{clicked: sectionIdx === 0}">정치</li>
+            <li @click="setSectionIdx(1)" :class="{clicked: sectionIdx === 1}">경제</li>
+            <li @click="setSectionIdx(2)" :class="{clicked: sectionIdx === 2}">사회</li>
+            <li @click="setSectionIdx(3)" :class="{clicked: sectionIdx === 3}">문화</li>
+            <li @click="setSectionIdx(4)" :class="{clicked: sectionIdx === 4}">세계</li>
+            <li @click="setSectionIdx(5)" :class="{clicked: sectionIdx === 5}">기술</li>
+            <li @click="setSectionIdx(6)" :class="{clicked: sectionIdx === 6}">연예</li>
+            <li @click="setSectionIdx(7)" :class="{clicked: sectionIdx === 7}">오피니언</li>
         </ul>
     </div>
 </template>
 <script>
 export default {
+    props: {
+
+    },
     data(){
-        return {isClicked:[false, false, false, false, false, false, false, false]}
+        return {sectionIdx: 0}
     },
     methods: {
-        setIsClicked(){
-
+        setSectionIdx(idx){
+            this.sectionIdx = idx
         }
     }
-    
 }
 </script>
+
+
 <style lang="scss">
     .sectionBtnsWrap{
+        min-width: 320px;
         display: flex;
         flex-direction: column;
         ul{

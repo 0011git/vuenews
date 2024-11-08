@@ -1,7 +1,9 @@
 <template>
     <div class="detailWrap">
         <div class="titleWrap">
-            <!-- <span class="section">{{ detailItem. }}</span> -->
+            <span class="section" v-for="(item) in detailItem.sections" :key="item">
+                {{ item }}
+            </span>
             <h2 class="title">{{  detailItem.title }}</h2>
             <ul class="infoWrap">
                 <li class="info">{{ detailItem.published_at.replace('T', ' ')}} {{ detailItem.publisher }}</li>
@@ -24,6 +26,7 @@
     </div>
 </template>
 
+
 <script>
 import { mapActions } from 'vuex';
 export default {
@@ -32,6 +35,8 @@ export default {
     }
 }
 </script>
+
+
 <style lang="scss">
     .detailWrap{
         margin-top: 32px;

@@ -1,7 +1,7 @@
 <template>
-    <figure class="strapWrap" @click="goToDetail">
+    <figure class="strapWrap" > <!--@click="goToDetail"-->
         <figcaption class="textWrap">
-            <h3 class="twoline">{{ news.title }}</h3>
+            <h3 class="twoline">{{ news.title }}</h3>   <!--twoline:App.vue에서 관리-->
             <span class="twoline">{{ news.published_at.replace('T', ' ').slice(0, -3) }} {{ news.publisher }}</span>
         </figcaption>
         <div :class="['imgWrap', {noImg: !news.thumbnail_url}]">
@@ -37,6 +37,7 @@ export default {
             flex: 1;
             h3{
                 margin-bottom: 4px;
+                font-size: 16px;
                 font-weight: 400;
             }
             span{

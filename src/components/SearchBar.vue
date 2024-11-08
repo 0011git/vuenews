@@ -45,7 +45,7 @@ export default {
             width: 100%;
             input{
                 width: 100%;
-                height: 100%;
+                height: 32px;
                 min-width: 200px;
                 min-height: 32px;
                 padding: 16px 40px 16px 16px;

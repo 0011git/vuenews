@@ -2,8 +2,8 @@
 <template>
     <div class="localGlobalTabWrap">
         <ul>
-            <li @click="onToggle(0)" :class="{'active':isActive[0]}">국내</li>
-            <li @click="onToggle(1)" :class="{'active':isActive[1]}">해외</li>
+            <li @click="onTabToggle(0)" :class="{'active':this.tab === 0}">국내</li>
+            <li @click="onTabToggle(1)" :class="{'active':this.tab === 1}">해외</li>
         </ul>
     </div>
 </template>
@@ -13,20 +13,21 @@ import { mapState, mapActions } from 'vuex';
 
 export default {
     data(){
-        return { isActive: [true, false],  }
+        return { tab: 0 }
     },
     computed: {
-        ...mapState("localOrGlobalModule", ['world']),
+        ...mapState("localOrGlobalModule", ['world']),  //vuex state 불러오기
     },
     methods:{
-        ...mapActions('localOrGlobalModule', ['isLocal']), // Vuex action을 불러오기
-        onToggle(index){
-            this.isActive = this.isActive.map((li, idx) => idx === index);
+        ...mapActions('localOrGlobalModule', ['chooseWorld']), // Vuex action 불러오기
+        
+        onTabToggle(index){
+            this.tab = index;
             if(index === 0) {
-                this.isLocal(true);
+                this.chooseWorld('local');
                 console.log(this.world);
             }else {
-                this.isLocal(false);
+                this.chooseWorld('global');
                 console.log(this.world);    //클릭 시 전역값 변경되는 것까지 확인
             }
         }

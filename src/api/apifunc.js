@@ -6,12 +6,12 @@ export async function mainApi(world){
     return response.data;
 }
 
-export async function sectionApi(world, section){
-    const response = await axios.get(`http://localhost:4000/news?world=${world}&page=section&section=${section}`)
+export async function sectionApi(world, section, pageNum){
+    const response = await axios.get(`http://localhost:4000/news?world=${world}&page=section&section=${section}&pageNum=${pageNum}`)
     return response.data;
 }
 
-export async function searchApi(world, keyword){
-    const response = await axios.get(`http://localhost:4000/news?world=${world}&page=search&keyword=${keyword}`)
+export async function searchApi(world, keyword, pageNum){
+    const response = await axios.get(`http://localhost:4000/news?world=${world}&page=search&keyword=${keyword}&pageNum=${pageNum}`)
     return response.data;
 }

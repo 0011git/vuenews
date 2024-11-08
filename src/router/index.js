@@ -15,12 +15,14 @@ const routes = [
   {
     path: '/section',
     name: 'section',
-    component: () => import('../views/SectionView.vue')
+    component: () => import('../views/SectionView.vue'),
+    props: route => ({ idx: route.query.idx })
   },
   {
     path: '/search',
     name: 'search',
-    component: () => import('../views/SearchView.vue')
+    component: () => import('../views/SearchView.vue'),
+    props: route => ({ world: route.query.world, keyword: route.query.keyword })
   }
 ]
 

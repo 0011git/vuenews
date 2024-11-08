@@ -1,4 +1,5 @@
 <template>
+  <form @submit.prevent="submitForm">
     <div :class="['searchBoxWrap', {'show': isSearchBoxVisible, 'lockScroll': lockScroll }]" @click.self="$emit('showSearchBox')">
       <div class="searchBoxModal">
         <div class="searchBarWrap">
@@ -8,24 +9,25 @@
           </div>
 
           <div class="keywordWrap">
-              <input type="text" id="keyword" placeholder="검색어를 입력하세요."/>
+              <input ref="keywordInput" type="text" v-model="keyword" @input="setKeyword(keyword)" id="keyword" placeholder="검색어를 입력하세요." />
               <label for="keyword"></label>
+              <button class="searchBtn" type="submit"></button>
           </div>
         </div>
   
         <ul class="radioGroup">
           <li class="radioWrap">
-            <label for="local worldLabel">
-              <span :class="['radioCustom', {'clicked':isChecked('local')}]"></span>
-              <input class="radio" type="radio" id="local" name="world" />
+            <label for="local worldLabel"  @click="setWorld('local')">
+              <span :class="['radioCustom', {'clicked':world === 'local'}]"></span>
+              <input class="radio" type="radio" id="local" name="world" value="local" v-model="world" defaultchecked />
               국내
             </label>
           </li>
           
           <li class="radioWrap">
-            <label for="global worldLabel">
-              <span :class="['radioCustom', {'clicked':isChecked('global')}]"></span>
-              <input class="radio" type="radio" id="global" name="world" />
+            <label for="global worldLabel" @click="setWorld('global')">
+              <span :class="['radioCustom', {'clicked':world === 'global'}]"></span>
+              <input class="radioInput" type="radio" id="global" name="world" value="global" v-model="world" />
               해외
             </label>
           </li>
@@ -33,19 +35,48 @@
   
       </div>
     </div>
+  </form>
 </template>
+
+
 <script>
 export default {
-    props: ["isSearchBoxVisible", "lockScroll"],
+    props: [
+      "isSearchBoxVisible", 
+      "lockScroll"
+    ],
     data() {
-      return { radio:'local' }
+      return { 
+        keyword: '',  // 검색어
+        world:'local' 
+      }
     },
     methods : {
-      isChecked(world){
-        return this.radio === world
+      setWorld(world){
+        this.world = world
+      },
+      setKeyword(word) {
+        this.keyword = word
+      },
+      submitForm() {
+      // 검색어와 world 데이터를 쿼리 파라미터로 URL에 추가
+      const queryParams = new URLSearchParams();
+      if (this.keyword !== '') {
+        queryParams.append('keyword', this.keyword);
+        queryParams.append('world', this.world);
+        window.location.href = `/search?${queryParams.toString()}`;
+      } else {
+        this.$refs.keywordInput.focus();
+        
       }
+
+      // 페이지 이동 (Vue Router를 사용하는 경우)
+      // this.$router.push({ path: '/search', query: queryParams.toString() });
+      
+      // 만약 페이지를 새로고침하면서 이동하려면 아래처럼 할 수 있습니다.
+      // window.location.href = `/search?${queryParams.toString()}`;
     }
-    
+    }
 }
 </script>
 
@@ -104,7 +135,7 @@ export default {
                 border: 1px solid #41B883;
               }
             } 
-            >label{
+            .searchBtn{
               &::after{
                 width: 24px;
                 height: 24px;
@@ -128,18 +159,18 @@ export default {
             display: flex;
             align-items: center;
             .radioCustom{
-                &::before{
+                &::after{
                   width: 16px;
                   height: 16px;
                   content: '';
                   display: block;
                   background: url('../assets/radio.svg') center no-repeat;
                 }
-                &.clicked::before{
+                &.clicked::after{
                   background: url('../assets/radio_clicked.svg') center no-repeat;
                 }
             }
-            .radio{
+            .radioInput{
               display: none;
             }
           }

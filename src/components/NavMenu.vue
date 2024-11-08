@@ -6,22 +6,26 @@
                     <div class="closeBtnWrap">
                         <button @click="$emit('showNav')"></button>
                     </div>
-                    <div class="inputWrap">
-                        <input type="text" id="keyword" placeholder="검색어를 입력하세요."/>
-                        <label for="keyword"></label>
-                    </div>
+                    <!-- 검색 기능 자체를 공통 함수로 뽑아서 사용할까?-->
+                        <div class="inputWrap">
+                            <label for="keyword">
+                            <input type="text" id="keyword" placeholder="검색어를 입력하세요."/>
+                            </label>
+                        </div>
+                    
+
                 </div>
                 <LocalGlobalTab />
             </div>
             <ul class="sectionWrap">
-                <a href="/section"><li>정치</li></a>
-                <a href="/section"><li>경제</li></a>
-                <a href="/section"><li>사회</li></a>
-                <a href="/section"><li>문화</li></a>
-                <a href="/section"><li>세계</li></a>
-                <a href="/section"><li>기술</li></a>
-                <a href="/section"><li>연예</li></a>
-                <a href="/section"><li>오피니언</li></a>
+                <li><a href="/section?idx=0">정치</a></li>
+                <li><a href="/section?idx=1">경제</a></li>
+                <li><a href="/section?idx=2">사회</a></li>
+                <li><a href="/section?idx=3">문화</a></li>
+                <li><a href="/section?idx=4">세계</a></li>
+                <li><a href="/section?idx=5">기술</a></li>
+                <li><a href="/section?idx=6">연예</a></li>
+                <li><a href="/section?idx=7">오피니언</a></li>
             </ul>
             <a href="/">
                 <span class="deco"></span>
@@ -92,14 +96,14 @@ export default {
                             min-width: 200px;
                             min-height: 32px;
                             padding: 8px 40px 8px 16px;
-                            background-color: #eeeeee;
-                            color: #cccccc;
+                            background-color: #eeeeee !important;
+                            color: #cccccc !important;
                             border: none;
                             border-radius: 8px;
                             &:focus{
-                                background-color: #ffffff;
-                                border: 1px solid #1f1f1f;
-                                color: #1f1f1f;
+                                background-color: #ffffff !important;
+                                border: 1px solid #1f1f1f !important;
+                                color: #1f1f1f !important;
                             }
                         }
                         label{
