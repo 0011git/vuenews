@@ -8,7 +8,9 @@
     <SearchBox :isSearchBoxVisible="isSearchBoxVisible" :lockScroll="lockScroll" @showSearchBox="showSearchBox" />
     <NavMenu :isNavVisible="isNavVisible" :lockScroll="lockScroll" @showNav="showNav" />
     <Header :isHeaderVisible="isHeaderVisible" @showNav="showNav" @showSearchBox="showSearchBox" />
-    <div class="contentsCommon"><router-view/></div>
+    <div class="contentsCommon">
+      <router-view/>
+    </div>
     <TopBtn :isTopBtnVisible="isTopBtnVisible" @scrollToTop="scrollToTop" />
     <Footer />
   </main>

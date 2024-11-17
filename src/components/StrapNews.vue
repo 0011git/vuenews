@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { goToDetailMixin } from '@/mixins/goToDetail';
 
 export default {
     props : {
@@ -20,7 +19,8 @@ export default {
             required: true
         }
     },
-    mixins: [goToDetailMixin]
+    methods: {
+    }
     
 }
 </script>

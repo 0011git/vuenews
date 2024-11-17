@@ -23,7 +23,6 @@
 import StrapNews from '@/components/StrapNews.vue'
 import dummyData from '@/assets/data.json';  //나중에 삭제
 // import { searchApi } from '@/api/apifunc';
-import { goToDetailMixin } from '@/mixins/goToDetail.js';
 
 
 export default {
@@ -49,7 +48,6 @@ export default {
         }
     },
     methods: {
-        mixins: [goToDetailMixin],
         async fetchSearchData(){
             // this.searchData += await searchApi(this.world, this.keyword, this.pageNum);
             this.pageNum++;

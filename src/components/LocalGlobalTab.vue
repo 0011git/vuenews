@@ -1,4 +1,3 @@
-<!-- https://news.deepsearch.com/api/#tag/%EA%B5%AD%EB%82%B4-%EA%B8%B0%EC%82%AC/operation/get_articles_v1_articles_get -->
 <template>
     <div class="localGlobalTabWrap">
         <ul>
@@ -9,26 +8,33 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-
 export default {
     data(){
-        return { tab: 0 }
+        return { 
+            tab: 0,
+            world: 'local'
+        }
+
     },
     computed: {
-        ...mapState("localOrGlobalModule", ['world']),  //vuex state 불러오기
     },
-    methods:{
-        ...mapActions('localOrGlobalModule', ['chooseWorld']), // Vuex action 불러오기
-        
+    props: {
+        onWorldTab: {
+            type: Function,
+            required: true,
+        }
+    },
+    methods:{        
         onTabToggle(index){
             this.tab = index;
             if(index === 0) {
-                this.chooseWorld('local');
+                this.onWorldTab(0);
+                this.world='local'
                 console.log(this.world);
             }else {
-                this.chooseWorld('global');
-                console.log(this.world);    //클릭 시 전역값 변경되는 것까지 확인
+                this.onWorldTab(1)
+                this.world='global'
+                console.log(this.world);
             }
         }
     }

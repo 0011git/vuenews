@@ -1,5 +1,5 @@
 <template>
-    <figure class="cardWrap" @click="goToDetailMixin">
+    <figure class="cardWrap">
         <div :class="['imgWrap', {noImg: !news.image_url}]">
             <img :src="news.image_url" :alt="news.title" />
         </div>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { goToDetailMixin } from '@/mixins/goToDetail';
 
 export default {
     props : {
@@ -20,7 +19,6 @@ export default {
             required: true
         }
     },
-    mixins: [goToDetailMixin]
     
 }
 </script>

@@ -2,13 +2,13 @@
   <div class="home">  
     <NavMenu />
     <div class="localGlobalTabWrap">
-      <LocalGlobalTab />
+      <LocalGlobalTab :onWorldTab="onWorldTab" />
     </div>
 
       <section>
         <h2>방금 업데이트된 뉴스</h2>
         <div class="visualNewsWrap">
-          <figure class="visualWrap" v-for="todayNews in (dummyData.today[0].data).slice(0,4)" :key="todayNews.id">   <!-- @click="goToDetailMixin"-->
+          <figure class="visualWrap" v-for="todayNews in (dummyData.today[0].data).slice(0,4)" :key="todayNews.id" @click="goToDetail(todayNews)">   <!-- @click="goToDetailMixin"-->
             <div :class="['imgWrap', {noImg: !todayNews.image_url}]">
                 <img :src="todayNews.image_url" :alt="todayNews.title" />
             </div>
@@ -58,25 +58,25 @@ import CardNews from '@/components/CardNews.vue';
 import StrapNews from '@/components/StrapNews.vue';
 // import SectionBtns from '@/components/SectionBtns.vue';
 import LocalGlobalTab from '@/components/LocalGlobalTab.vue'
-import { mapState, mapActions } from 'vuex';
-import { goToDetailMixin } from '@/mixins/goToDetail.js';
+// import { goToDetail } from '@/composables/cmmn.js';
 // import { mainApi, sectionApi } from '@/api/apifunc';
-
+// import { useRouter } from 'vue-router';
 import dummyData from '@/assets/data.json';  //나중에 삭제
-
+import { useRouter } from 'vue-router';
 
 // @ = /src
 
 export default {
   name: 'HomeView',
   computed:{
-    ...mapState("localOrGlobalModule", ['world']),
+    
   },
   data(){
     return {
       sectionIdx: 1,  //기본0
       sectionArr:  ['politics', 'economy', 'society', 'culture', 'world', 'tech', 'entertainment', 'opinion'],
-      dummyData
+      dummyData,
+      world: 'local'
     }
   },
   watch:{
@@ -90,11 +90,16 @@ export default {
     LocalGlobalTab
   },
   methods: {
-    ...mapActions('DetailDataModule', ['saveDetailData']),
-    ...mapActions('localOrGlobalModule', ['chooseWorld'] ),
-
-    mixins: [goToDetailMixin],
-
+    onWorldTab(num) {
+      num === 0 ? this.world = 'local' : this.world = 'global'
+      console.log(`${this.world}메인`);
+    },
+    //상세 페이지로 가기
+    goToDetail(obj){
+      const router = useRouter();
+      const data = JSON.stringify(obj);
+      router.push({ path: '/detail' , query: { ...data } });
+    },
     //메인 최초 실행 시
     async fetchMainData(){
       // this.mainData = await mainApi(this.world);
@@ -106,6 +111,7 @@ export default {
       console.log(`${this.sectionArr[idx]} 패치 완료`);
       this.sectionIdx = idx
     },
+    
   },
   created(){
     // this.fetchMainData();

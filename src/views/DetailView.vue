@@ -28,10 +28,17 @@
 
 
 <script>
-import { mapActions } from 'vuex';
+// import { useUrlSearchParams } from '@vueuse/core'
+
 export default {
+    data(){
+        return {
+            data:{},
+        }
+    },
+    methods: {
+    },
     computed: {
-        ...mapActions('DetailDataModule', ['detailItem']), // 액션 가져오기
     }
 }
 </script>
