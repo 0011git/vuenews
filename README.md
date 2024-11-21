@@ -1,4 +1,4 @@
-[![worldnews](https://github.com/user-attachments/assets/d3e2889b-1840-4bac-a7ae-1ead6ca9f732)](로고에배포url링크걸기)
+[![worldnews_logo](https://github.com/user-attachments/assets/ed5a9c30-e8a1-494f-baa8-5c698e7ed1e7)](https://worldnews-one.vercel.app/)
 
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white) ![Vuex](https://img.shields.io/badge/Vuex-4FC08D?style=flat-square&logo=Vuex&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white) ![Axios](https://img.shields.io/badge/Axios-5A29E6?style=flat-square&logo=axios&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-CC6699?style=flat-square&logo=sass&logoColor=white)
 
