@@ -111,12 +111,13 @@ export default {
 }
 
 main{
-  max-width: 768px;
   position: relative;
 }
 
 .contentsCommon{
+  max-width: 768px;
   padding: 60px 20px 0;
+  margin: 0 auto;
 }
 .noImg{
   background-color: #eeeeee;

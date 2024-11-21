@@ -1,6 +1,8 @@
 <template>
-    <div @click="$emit('scrollToTop')"  :class="['topBtnWrap', {show:isTopBtnVisible}]">
-        <button type="button"></button>
+    <div class="topBtnBlock">
+        <div @click="$emit('scrollToTop')"  :class="['topBtnWrap', {show:isTopBtnVisible}]">
+            <button type="button"></button>
+        </div>
     </div>
 </template>
 
@@ -11,6 +13,7 @@ export default {
 </script>
 
 <style lang="scss">
+.topBtnBlock{
     .topBtnWrap{
         width: 48px;
         height: 48px;
@@ -21,7 +24,7 @@ export default {
         border-radius: 100px;
         border: 1px solid #1f1f1f;
         cursor: pointer;
-        z-index: 9999;
+        z-index: 99;
         transform: translateY(200%);
         &.show{
             transform: translateY(0%);
@@ -42,4 +45,5 @@ export default {
             }
         }
     }
+}
 </style>

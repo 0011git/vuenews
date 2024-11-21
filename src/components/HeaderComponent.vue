@@ -22,6 +22,7 @@ export default {
 <style lang="scss">
     header{
         width: 100%;
+        
         height: 60px;
         padding: 0 20px;
         position: fixed;
@@ -34,7 +35,9 @@ export default {
         }
         .headerWrap{
             width: 100%;
+            max-width: 768px;
             height: 60px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;    

@@ -54,12 +54,12 @@ export default {
         // top: 0;
         // left: 0;
         z-index: 100;
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         &.show{
-            transform: translateX(0);
+            transform: translateY(0);
         }
         .navMenuWrap{
-            width: 70%;
+            width: 30%;
             min-width: 280px;
             height: 100vh;     
             padding-top: 16px;   
