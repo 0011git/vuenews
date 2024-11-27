@@ -1,6 +1,7 @@
 <template>
     <figure class="cardWrap">
         <div :class="['imgWrap', {noImg: !news.image_url}]">
+            <span class="imgDimmer"></span>
             <img :src="news.image_url" :alt="news.title" />
         </div>
         <figcaption class="textWrap">
@@ -29,20 +30,29 @@ export default {
         cursor: pointer;
         &:hover{
             .imgWrap{
-                > img{
-                    &::after{
-                        background-color: rgba($color: #000000, $alpha: 0.3);
-                    }
+                .imgDimmer{
+                    display: block;
                 }
             }
         }
         .imgWrap{
             border-radius: 20px;
             overflow: hidden;
+            position: relative;
+            .imgDimmer{
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #000000, $alpha: 0.2);
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+                z-index: 1;
+            }
             &.noImg{
                 min-height: 240px;
             }
-            >img {
+            img {
                 display: block;
                 position: relative;
                 transition: 0.3s;

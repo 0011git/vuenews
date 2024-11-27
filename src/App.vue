@@ -8,6 +8,7 @@
     <SearchBox :isSearchBoxVisible="isSearchBoxVisible" :lockScroll="lockScroll" @showSearchBox="showSearchBox" />
     <NavMenu :isNavVisible="isNavVisible" :lockScroll="lockScroll" @showNav="showNav" />
     <Header :isHeaderVisible="isHeaderVisible" @showNav="showNav" @showSearchBox="showSearchBox" />
+    <ModalPopup />
     <div class="contentsCommon">
       <router-view/>
     </div>
@@ -18,6 +19,7 @@
 
 <script>
 import Header from '@/components/HeaderComponent.vue'
+import ModalPopup from '@/components/ModalPopup.vue';
 import TopBtn from '@/components/TopBtn.vue'
 import Footer from '@/components/FooterComponent.vue'
 import NavMenu from '@/components/NavMenu.vue'
@@ -30,7 +32,8 @@ export default {
     TopBtn,
     Footer,
     NavMenu,
-    SearchBox
+    SearchBox,
+    ModalPopup
 },
   data(){
     return { 

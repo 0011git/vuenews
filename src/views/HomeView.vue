@@ -1,15 +1,16 @@
 <template>
-  <div class="home">  
+  <div class="home">
     <NavMenu />
     <div class="localGlobalTabWrap">
       <LocalGlobalTab :onWorldTab="onWorldTab" />
     </div>
-
+      
       <section>
         <h2>방금 업데이트된 뉴스</h2>
         <div class="visualNewsWrap">
           <figure class="visualWrap" v-for="todayNews in (dummyData.today[0].data).slice(0,4)" :key="todayNews.id" @click="goToDetail(todayNews)">   <!-- @click="goToDetailMixin"-->
             <div :class="['imgWrap', {noImg: !todayNews.image_url}]">
+                <span class="imgDimmer"></span>
                 <img :src="todayNews.image_url" :alt="todayNews.title" />
             </div>
             <figcaption class="textWrap">
@@ -56,11 +57,8 @@
 <script>
 import CardNews from '@/components/CardNews.vue';
 import StrapNews from '@/components/StrapNews.vue';
-// import SectionBtns from '@/components/SectionBtns.vue';
-import LocalGlobalTab from '@/components/LocalGlobalTab.vue'
-// import { goToDetail } from '@/composables/cmmn.js';
-// import { mainApi, sectionApi } from '@/api/apifunc';
-// import { useRouter } from 'vue-router';
+import LocalGlobalTab from '@/components/LocalGlobalTab.vue';
+import { mainApi, sectionApi } from '@/api/apifunc';
 import dummyData from '@/assets/data.json';  //나중에 삭제
 import { useRouter } from 'vue-router';
 
@@ -94,27 +92,26 @@ export default {
       num === 0 ? this.world = 'local' : this.world = 'global'
       console.log(`${this.world}메인`);
     },
-    //상세 페이지로 가기
+    // 상세 페이지로 가기
     goToDetail(obj){
       const router = useRouter();
       const data = JSON.stringify(obj);
       router.push({ path: '/detail' , query: { ...data } });
     },
-    //메인 최초 실행 시
+    // 데이터 패치 함수
     async fetchMainData(){
-      // this.mainData = await mainApi(this.world);
-    },
-    
+      this.mainData = await mainApi(this.world);
+    },    
     //섹션별 컨텐츠에서 섹션 버튼 클릭했을 때
     async changeSection(idx) {
-      // this.mainData = await sectionApi(this.world, this.sectionArr[idx]);
+      this.mainData = await sectionApi(this.world, this.sectionArr[idx]);
       console.log(`${this.sectionArr[idx]} 패치 완료`);
       this.sectionIdx = idx
     },
     
   },
   created(){
-    // this.fetchMainData();
+    // this.fetchMainData(); // 메인 최초 실행 시 데이터 패치 함수 실행
   }
 }
 </script>
@@ -151,11 +148,25 @@ export default {
             margin-bottom: 60px;
           }
           &:hover{
-            background-color: rgba($color: #000000, $alpha: 0.1);
+            .imgWrap{
+              .imgDimmer{
+                display: block;
+              }
+            }
           }
           .imgWrap{
               border-radius: 20px;
               overflow: hidden;
+              position: relative;
+              .imgDimmer{
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #000000, $alpha: 0.2);
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+              }
               &.noImg{
                   min-height: 240px;
               }
