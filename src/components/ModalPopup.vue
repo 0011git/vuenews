@@ -78,9 +78,7 @@ export default {
                 display: block;
                 background: url('../assets/close.svg') center no-repeat;
                 cursor: pointer;
-
-            }
-            
+            }            
         }
         .infoWrap{
             padding: 32px 0 20px;
